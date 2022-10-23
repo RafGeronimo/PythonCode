@@ -57,14 +57,140 @@ print('FEBio_disp_mag = ', FEBio_disp_mag)
 #print('CEOS_time = ', CEOS_time)
 
 
-plt.plot(FEBio_time, FEBio_disp_mag, 'b', label='FEBio')
-plt.plot(CEOS_time, CEOS_disp_mag, 'r', label = 'CEOS')
+plt.plot(FEBio_time, FEBio_disp_mag, 'b', label='FEBio', marker = '*')
+plt.plot(CEOS_time, CEOS_disp_mag, 'r', label = 'CEOS', marker = '.')
 plt.title('Magnitude do deslocamento do Nó x tempo ')
 plt.xlabel('Tempo')
 plt.ylabel('Magnitude do deslocamento')
 plt.legend()
 plt.show()
 
+
+
+df_FEBio_disp_mag_perm1 = pd.read_csv('FEBio_Disp_mag_Perm_1.txt', delim_whitespace = True)
+df_FEBio_pressure_perm1 = pd.read_csv('FEBio_Pressure_Perm_1.txt', delim_whitespace = True)
+
+FEBio_time_perm1 = []
+FEBio_disp_mag_perm1 = []
+FEBio_pressure_perm1 = []
+
+
+
+for i in range (len(df_FEBio_disp_mag_perm1)) :
+
+    FEBio_time_perm1.append(df_FEBio_disp_mag_perm1.iloc[i][0])
+    FEBio_disp_mag_perm1.append(df_FEBio_disp_mag_perm1.iloc[i][1])
+    FEBio_pressure_perm1.append(df_FEBio_pressure_perm1.iloc[i][1])
+
+
+
+df_CEOS_disp_mag_perm1 = pd.read_csv('CEOS_Disp_Mag_Perm_1.dat', delim_whitespace = True)
+df_CEOS_pressure_perm1 = pd.read_csv('CEOS_Pressure_Perm_1.dat', delim_whitespace = True)
+
+CEOS_time_perm1 = []
+CEOS_disp_mag_perm1 = []
+CEOS_pressure_perm1 = []
+
+for i in range(len(df_CEOS_disp_mag_perm1)):
+
+    CEOS_time_perm1.append(df_CEOS_disp_mag_perm1.iloc[i][0])
+    CEOS_disp_mag_perm1.append(df_CEOS_disp_mag_perm1.iloc[i][1])
+    CEOS_pressure_perm1.append(df_CEOS_pressure_perm1.iloc[i][1])
+
+
+for i in range ( len(CEOS_time_perm1) ) :
+
+    CEOS_time_perm1[i] = float(CEOS_time_perm1[i])
+
+print('================================================================')
+print('PERMEABILIDADE k = 1')
+print('FEBio_time = ', FEBio_time_perm1)
+print('CEOS_time = ', CEOS_time_perm1)
+print('CEOS_disp_mag = ', CEOS_disp_mag_perm1)
+print('FEBio_disp_mag = ', FEBio_disp_mag_perm1)
+print('CEOS_pressure = ', CEOS_pressure_perm1)
+print('FEBio_pressure = ', FEBio_pressure_perm1)
+print('================================================================')
+
+plt.plot(FEBio_time_perm1, FEBio_disp_mag_perm1, 'b', label='FEBio', marker = '*')
+plt.plot(CEOS_time_perm1, CEOS_disp_mag_perm1, 'r', label = 'CEOS', marker = '.')
+plt.title('Magnitude do deslocamento do Nó x tempo (PERMEABILIDADE k=1)')
+plt.xlabel('Tempo')
+plt.ylabel('Magnitude do deslocamento')
+plt.legend()
+plt.show()
+
+plt.plot(FEBio_time_perm1, FEBio_pressure_perm1, 'b', label='FEBio', marker = '*')
+plt.plot(CEOS_time_perm1, CEOS_pressure_perm1, 'r', label = 'CEOS', marker = '.')
+plt.title('Pressão nodal x tempo (PERMEABILIDADE k=1)')
+plt.xlabel('Tempo')
+plt.ylabel('Pressão Efetiva')
+plt.legend()
+plt.show()
+
+
+
+
+df_FEBio_disp_mag_perm10 = pd.read_csv('FEBio_Disp_mag_Perm_10.txt', delim_whitespace = True)
+df_FEBio_pressure_perm10 = pd.read_csv('FEBio_Pressure_Perm_10.txt', delim_whitespace = True)
+
+FEBio_time_perm10 = []
+FEBio_disp_mag_perm10 = []
+FEBio_pressure_perm10 = []
+
+
+
+for i in range (len(df_FEBio_disp_mag_perm10)) :
+
+    FEBio_time_perm10.append(df_FEBio_disp_mag_perm10.iloc[i][0])
+    FEBio_disp_mag_perm10.append(df_FEBio_disp_mag_perm10.iloc[i][1])
+    FEBio_pressure_perm10.append(df_FEBio_pressure_perm10.iloc[i][1])
+
+
+
+df_CEOS_disp_mag_perm10 = pd.read_csv('CEOS_Disp_Mag_Perm_10.dat', delim_whitespace = True)
+df_CEOS_pressure_perm10 = pd.read_csv('CEOS_Pressure_Perm_10.dat', delim_whitespace = True)
+
+CEOS_time_perm10 = []
+CEOS_disp_mag_perm10 = []
+CEOS_pressure_perm10 = []
+
+for i in range(len(df_CEOS_disp_mag_perm10)):
+
+    CEOS_time_perm10.append(df_CEOS_disp_mag_perm10.iloc[i][0])
+    CEOS_disp_mag_perm10.append(df_CEOS_disp_mag_perm10.iloc[i][1])
+    CEOS_pressure_perm10.append(df_CEOS_pressure_perm10.iloc[i][1])
+
+
+for i in range ( len(CEOS_time_perm10) ) :
+
+    CEOS_time_perm10[i] = float(CEOS_time_perm10[i])
+
+print('================================================================')
+print('PERMEABILIDADE k = 10')
+print('FEBio_time = ', FEBio_time_perm10)
+print('CEOS_time = ', CEOS_time_perm10)
+print('CEOS_disp_mag = ', CEOS_disp_mag_perm10)
+print('FEBio_disp_mag = ', FEBio_disp_mag_perm10)
+print('CEOS_pressure = ', CEOS_pressure_perm10)
+print('FEBio_pressure = ', FEBio_pressure_perm10)
+print('================================================================')
+
+plt.plot(FEBio_time_perm10, FEBio_disp_mag_perm10, 'b', label='FEBio', marker = '*')
+plt.plot(CEOS_time_perm10, CEOS_disp_mag_perm10, 'r', label = 'CEOS', marker = '.')
+plt.title('Magnitude do deslocamento do Nó x tempo (PERMEABILIDADE k=10)')
+plt.xlabel('Tempo')
+plt.ylabel('Magnitude do deslocamento')
+plt.legend()
+plt.show()
+
+plt.plot(FEBio_time_perm10, FEBio_pressure_perm10, 'b', label='FEBio', marker = '*')
+plt.plot(CEOS_time_perm10, CEOS_pressure_perm10, 'r', label = 'CEOS', marker = '.')
+plt.title('Pressão nodal x tempo (PERMEABILIDADE k=10)')
+plt.xlabel('Tempo')
+plt.ylabel('Pressão Efetiva')
+plt.legend()
+plt.show()
 
 
 
