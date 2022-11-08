@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
+#Modelo 1 - com malha de 1000 elem
+
 df_FEBio_disp_mag_1000elem = pd.read_csv('FEBio_disp_mag_1000elem.txt', delim_whitespace = True)
 df_FEBio_pressure_1000elem = pd.read_csv('FEBio_pressure_1000elem.txt', delim_whitespace = True)
 

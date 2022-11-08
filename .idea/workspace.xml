@@ -32,7 +32,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.Curves">
+  <component name="RunManager" selected="Python.1000elem_curves">
     <configuration name="1000elem_curves" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,8 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Curves" />
         <item itemvalue="Python.1000elem_curves" />
+        <item itemvalue="Python.Curves" />
         <item itemvalue="Python.CF0 Variation curves" />
       </list>
     </recent_temporary>
