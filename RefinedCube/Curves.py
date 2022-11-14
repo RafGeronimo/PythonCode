@@ -54,8 +54,6 @@ print('CEOS disp mag = ', CEOS_disp_mag)
 #print('FEBio stress = ', FEBio_stress)
 #print('CEOS stress = ', CEOS_stress)
 
-
-
 plt.plot(FEBio_time, FEBio_disp_mag, 'b', label='FEBio', marker = '*')
 plt.plot(CEOS_time, CEOS_disp_mag, 'r', label = 'CEOS', marker = '.')
 plt.title('Magnitude do deslocamento do Nó x tempo')
